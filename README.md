@@ -1,2 +1,18 @@
 # Udacity-Project2-Building-a-CI-CD-Pipeline
-Building a CI/CD Pipeline perform continuous delivery for a Python-based machine learning application using the Flask web framework
+Building a CI/CD Pipeline to perform continuous delivery for a Python-based machine learning application using the Flask web framework
+
+## Overview
+The project is to perform continuous delivery for a python-based machine learning application using the Flask web framework which performs predictions of house prices. It shows the use of CI/CD capablilities to automated deployments of applications in serverles environments by use of the follwoing technologies:
+- GitHUB
+- GitHUB Actions (CI)
+- Agile Boards (Trello)
+- Azure Cloud Shell
+- Azure DevOps
+- Pipelines (CD)
+- Flask Web Framework
+
+## Steps to do:
+1. Set up of GitHub Repo
+2. Launch an Azure Cloud Shell, creation of ssh keys and upload of keys to this Repo.
+3. Creation of a Makefile. With the Makefile shortcuts to build, test, and deploy a project are created.
+4. Creation of a requirements.txt. This file includes the required packages for automated installation.
