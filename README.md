@@ -16,3 +16,9 @@ The project is to perform continuous delivery for a python-based machine learnin
 2. Launch an Azure Cloud Shell, creation of ssh keys and upload of keys to this Repo.
 3. Creation of a Makefile. With the Makefile shortcuts to build, test, and deploy a project are created.
 4. Creation of a requirements.txt. This file includes the required packages for automated installation.
+5. Creation of virtual environment: 
+A Python virtual environment gives the ability to isolate the Python development projects from the system installed Python and other Python environments. This gives full control of the project and makes it easily reproducible
+          python3 -m venv ~/.myrepo
+          source ~/.myrepo/bin/activate
+6. xxx
+
