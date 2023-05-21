@@ -58,11 +58,11 @@ stages:
       displayName: 'myStep 5 - Upload package'
       artifact: drop
 
-  - stage: Deploy
-    displayName: Deploy Web App
-    dependsOn: Build
-    condition: suceeded()
-    jobs:
+- stage: Deploy
+  displayName: Deploy Web App
+  dependsOn: Build
+  condition: suceeded()
+  jobs:
     - deployment: DeploymentJob
       pool: MyAgentpool
       environment: $(environment name)
