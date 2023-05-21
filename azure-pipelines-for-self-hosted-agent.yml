@@ -73,14 +73,14 @@ stages:
         pool: MyAgentpool
         environment: $(environment name)
         strategy:
-                runOnce:
-                  deploy:
-                  steps:
+          runOnce:
+            deploy:
+              steps:
                   - task: AzureWebApp@1
                     displayName: Deploy Azure Web App
                     inputs:
                       azureSubscription: $(AzureServiceConnectionID)
-                      appName: $(WebAppName)
+                      appName: $(webAppName)
                       package: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
                       appType: webapp
 
