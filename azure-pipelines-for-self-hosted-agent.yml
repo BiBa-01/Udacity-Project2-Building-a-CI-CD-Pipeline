@@ -10,7 +10,7 @@ pool: myAgentPool
 
 variables:
   # TODO: Replace the service connection name as used in the DevOps project settings
-  azureServiceConnectionId: 'UdacityDS - 57(630a1e98-7922-4c13-9488-39768dd9328d)'
+  azureServiceConnectionId: 'myserviceconnection'
 
   
   # TODO: Specify the value of the existing Web App name
