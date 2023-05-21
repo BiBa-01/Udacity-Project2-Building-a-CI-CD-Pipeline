@@ -1,5 +1,7 @@
 import time
-from locust import HttpUser, task, between
+from locust import HttpUser, task, between, TaskSet
+
+
 
 class webUser(HttpUser):
     wait_time = between(1, 3)
@@ -31,3 +33,12 @@ class webUser(HttpUser):
    }        
 })    
 
+class MyTaskSet(TaskSet):
+    @task
+    def my_task(self):
+        self.client.get("/")
+
+class MyLocust(Locust):
+    task_set = MyTaskSet
+    min_wait = 5000
+    max_wait = 15000
