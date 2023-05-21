@@ -62,7 +62,7 @@ stages:
 - stage: Deploy
   displayName: Deploy Web App
   dependsOn: Build
-  condition: suceeded()
+  #condition: suceeded()
   jobs:
   - deployment: DeploymentJob
     pool: MyAgentpool
