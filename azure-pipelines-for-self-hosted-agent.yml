@@ -5,6 +5,7 @@
 trigger:
 - main
 
+
 # TODO: Replace the agent pool name
 pool: MyAgentPool
 
@@ -78,7 +79,7 @@ stages:
                     displayName: Deploy Azure Web App
                     inputs:
                       azureSubscription: $(AzureServiceConnectionID)
-                        appName: $(WebAppName)
-                        package: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
-                        appType: webapp
+                      appName: $(WebAppName)
+                      package: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+                      appType: webapp
 
