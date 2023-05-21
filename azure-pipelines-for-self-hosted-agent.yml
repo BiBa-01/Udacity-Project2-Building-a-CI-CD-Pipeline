@@ -16,6 +16,7 @@ variables:
   # Project root folder. Point to the folder containing manage.py file.
   projectRoot: $(System.DefaultWorkingDirectory) 
 
+
 stages:
 - stage: Build
   displayName: Build stage
@@ -61,7 +62,6 @@ stages:
 - stage: Deploy
   displayName: Deploy Web App
   dependsOn: Build
-
   condition: suceeded
   jobs:
   - deployment: DeploymentJob
@@ -72,10 +72,10 @@ stages:
         deploy:
           steps:
           - task: AzureWebApp@1
-            displayName: Deploy Azure Web App
+            displayName: 'Deploy Azure Web App : Udacity-Project2-Building-a-CI-CD-Pipeline'
             inputs:
-              azureSubscription: $(AzureServiceConnectionID)
+              azureSubscription: $(azureServiceConnectionID)
               appName: $(WebAppName)
-              package: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+              package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
               appType: webapp
 
