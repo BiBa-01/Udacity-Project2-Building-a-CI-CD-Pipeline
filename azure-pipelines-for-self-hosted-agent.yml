@@ -78,7 +78,7 @@ stages:
                     displayName: Deploy Azure Web App
                     inputs:
                       azureSubscription: $ (AzureServiceConnectionID)
-                        appName: $ (WebAppName)
+                        #appName: $ (WebAppName)
                         package: $ (Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
                         appType: webapp
 
