@@ -10,7 +10,8 @@ pool: myAgentPool
 
 variables:
   # TODO: Replace the service connection name as used in the DevOps project settings
-  azureServiceConnectionId: 'mySC'
+  azureServiceConnectionId: 'UdacityDS - 57(630a1e98-7922-4c13-9488-39768dd9328d)'
+
   
   # TODO: Specify the value of the existing Web App name
   webAppName: 'MyWebAPPBB'
@@ -60,3 +61,24 @@ stages:
     - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
       displayName: 'myStep 5 - Upload package'
       artifact: drop
+    
+  - stage: Deploy
+    displayName: Deploy Web App
+    dependsOn: Build
+    condition: Suceeded
+    jobs:
+    - deployment: DeploymentJob
+    pool: MyAgentpool
+    environment: $(environment name)
+    strategy:
+            runOnce:
+              deploy:
+                steps:
+                  - task: AzureWebApp@1
+                    displayName: Deploy Azure Web App
+                    inputs:
+                      azureSubscription: $ (AzureServiceConnectionID)
+                        appName: $ (WebAppName)
+                        package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+                        appType: webapp
+
