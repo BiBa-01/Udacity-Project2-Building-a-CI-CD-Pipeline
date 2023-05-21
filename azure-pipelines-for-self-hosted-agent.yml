@@ -5,6 +5,7 @@
 trigger:
 - main
 - build 
+- build_deploy1
 - task: AzureWebApp@1
   inputs:
     appName: 
