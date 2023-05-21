@@ -5,14 +5,14 @@
 trigger:
 - main
 <<<<<<< HEAD
-- buil
+- build
 - build_deploy1
 =======
 - task: AzureWebApp@1
   inputs:
     appName: 
     package: '$(System.DefaultWorkingDirectory)/**/*.zip'
->>>>>>> c8dc9a3dbd4ed1dd31605a3d366fd76fcb84166c
+
 
 # TODO: Replace the agent pool name
 pool: MyAgentPool
