@@ -4,10 +4,7 @@
 # https://aka.ms/yaml
 trigger:
 - main
-- task: AzureWebApp@1
-  inputs:
-    appName: 
-    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+
 
 # TODO: Replace the agent pool name
 pool: MyAgentPool
