@@ -27,5 +27,13 @@ A Python virtual environment gives the ability to isolate the Python development
 8. Run make all to install, lint and test code 
 9. Configure GitHub Actions. Git Hub Actions will test project upon change events in GitHub. This is necessary to perform Continuous Integration remotely. The push change to GitHuB triggers the GitHub Actions Container, which in turns runs a service of commands.
           Creation of pythonapp.yml and check first successful run
-11. xxx
+11. Continuous Delivery
+          Set up Azure Pipeline and deploy the Flask starter code (provided from Udacity: C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn)
+          Fork the repository C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn and clone it to your machine and copy the starter files to the new repository
+          
+13. Set up Azure Pipelines:
+If not already done, ensure to enable Azure Pipelines in GitHub.
+15. Making Predictions:
+
+15. xxx
 
