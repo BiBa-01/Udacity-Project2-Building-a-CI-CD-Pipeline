@@ -1,46 +1,51 @@
-<<<<<<< HEAD
-# flask-ml-service
-A sample Flask application to showcase the Azure Pipeline.
-=======
-# Udacity-Project2-Building-a-CI-CD-Pipeline
-Building a CI/CD Pipeline to perform continuous delivery for a Python-based machine learning application using the Flask web framework
+# Overview
 
-## Overview
-The project is to perform continuous delivery for a python-based machine learning application using the Flask web framework which performs predictions of house prices. It shows the use of CI/CD capablilities to automated deployments of applications in serverles environments by use of the follwoing technologies:
-- GitHUB
-- GitHUB Actions (CI)
-- Agile Boards (Trello)
-- Azure Cloud Shell
-- Azure DevOps
-- Pipelines (CD)
-- Flask Web Framework
+<TODO: complete this with an overview of your project>
 
-## Steps to do:
-1. Set up of GitHub Repo
-2. Launch an Azure Cloud Shell, creation of ssh keys (ssh-keygen -t rsa) and upload of keys to this Repo.
-3. Creation of a Makefile. With the Makefile shortcuts to build, test, and deploy a project are created.
-4. Creation of a requirements.txt. This file includes the required packages for automated installation.
-5. Creation of virtual environment: 
-A Python virtual environment gives the ability to isolate the Python development projects from the system installed Python and other Python environments. This gives full control of the project and makes it easily reproducible
-          python3 -m venv ~/.myrepo
-          source ~/.myrepo/bin/activate
-6. Script and Test file for Continous Integration:
-          hello.py
-          test_hello.py
-7. Clone GitHub Repo to Azure Cloud Shell
-8. Run make all to install, lint and test code 
-9. Configure GitHub Actions. Git Hub Actions will test project upon change events in GitHub. This is necessary to perform Continuous Integration remotely. The push change to GitHuB triggers the GitHub Actions Container, which in turns runs a service of commands.
-          Creation of pythonapp.yml and check first successful run
-11. Continuous Delivery
-          Set up Azure Pipeline and deploy the Flask starter code (provided from Udacity: C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn)
-          Fork the repository C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn and clone it to your machine and copy the starter files to the new repository
-          
-13. Set up Azure Pipelines:
-If not already done, ensure to enable Azure Pipelines in GitHub.
-15. Making Predictions:
+## Project Plan
+<TODO: Project Plan
 
-15. xxx
->>>>>>> 4a3e4ab2cacb9ea03ae67ce4dbf23c31112c82fd
+* A link to a Trello board for the project
+* A link to a spreadsheet that includes the original and final project plan>
 
-## Environment
-Python 3.7
+## Instructions
+
+<TODO:  
+* Architectural Diagram (Shows how key parts of the system work)>
+
+<TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
+
+* Project running on Azure App Service
+
+* Project cloned into Azure Cloud Shell
+
+* Passing tests that are displayed after running the `make all` command from the `Makefile`
+
+* Output of a test run
+
+* Successful deploy of the project in Azure Pipelines.  [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
+
+* Running Azure App Service from Azure Pipelines automatic deployment
+
+* Successful prediction from deployed flask app in Azure Cloud Shell.  [Use this file as a template for the deployed prediction](https://github.com/udacity/nd082-Azure-Cloud-DevOps-Starter-Code/blob/master/C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn/make_predict_azure_app.sh).
+The output should look similar to this:
+
+```bash
+udacity@Azure:~$ ./make_predict_azure_app.sh
+Port: 443
+{"prediction":[20.35373177134412]}
+```
+
+* Output of streamed log files from deployed application
+
+> 
+
+## Enhancements
+
+<TODO: A short description of how to improve the project in the future>
+
+## Demo 
+
+<TODO: Add link Screencast on YouTube>
+
+
