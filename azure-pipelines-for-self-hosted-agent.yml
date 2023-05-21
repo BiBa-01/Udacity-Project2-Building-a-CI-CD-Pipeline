@@ -19,7 +19,6 @@ variables:
   # Project root folder. Point to the folder containing manage.py file.
   projectRoot: $(System.DefaultWorkingDirectory)
 
-stages:
 - stage: Build
   displayName: Build stage
   jobs:
@@ -60,8 +59,6 @@ stages:
     - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
       displayName: 'myStep 5 - Upload package'
       artifact: drop
-    
-<<<<<<< HEAD
 
  - stage: Deploy
     displayName: 'Deploy Web App'
@@ -82,27 +79,27 @@ stages:
                 appName: $(WebAppName)
                 package: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
                 appType: webapp
-=======
-    - stage: Deploy
-      displayName: 'Deploy Web App'
-      dependsOn: Build
-      condition: suceeded()
-      jobs:
-      - deployment: DeploymentJob
-        pool: MyAgentpool
-        environment: $(environment name)
-        strategy:
-                runOnce:
-                  deploy:
-                  steps:
-                  - task: AzureWebApp@1
-                    displayName: Deploy Azure Web App
-                    inputs:
-                      azureSubscription: $(AzureServiceConnectionID)
-                      appName: $(WebAppName)
-                      package: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
-                      appType: webapp
->>>>>>> 1f0a5dfc44ae2a53f1bee777072c391ec8b55230
+
+- stage: Deploy
+    displayName: 'Deploy Web App'
+    dependsOn: Build
+    condition: suceeded()
+    jobs:
+    - deployment: DeploymentJob
+      pool: MyAgentpool
+      environment: $(environment name)
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+            - task: AzureWebApp@1
+               displayName: Deploy Azure Web App
+                 inputs:
+                   azureSubscription: $(AzureServiceConnectionID)
+                   appName: $(WebAppName)
+                   package: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+                   appType: webapp
+
 - stage: Deploy
   displayName: Deploy Web App
   dependsOn: Build
