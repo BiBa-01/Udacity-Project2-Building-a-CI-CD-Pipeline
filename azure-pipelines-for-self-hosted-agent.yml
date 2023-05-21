@@ -6,10 +6,6 @@ trigger:
 - main
 - build 
 - build_deploy1
-- task: AzureWebApp@1
-  inputs:
-    appName: 
-    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
 
 # TODO: Replace the agent pool name
 pool: MyAgentPool
@@ -71,7 +67,7 @@ stages:
     - stage: Deploy
       displayName: Deploy Web App
       dependsOn: Build
-      condition: Suceeded
+      condition: Suceeded()
       jobs:
       - deployment: DeploymentJob
         pool: MyAgentpool
