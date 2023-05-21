@@ -1,4 +1,3 @@
-import time
 from locust import HttpUser, task, between, TaskSet
 
 class MyUser(HttpUser):
@@ -10,7 +9,7 @@ class MyUser(HttpUser):
 
     @task
     def load_predict(self):
-        self.client.get("/predict", json={
+        self.client.post("predict", json={
     "CHAS":{
       "0":0
    },
