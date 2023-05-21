@@ -1,18 +1,16 @@
 import time
 from locust import HttpUser, task, between, TaskSet
 
+class MyUser(HttpUser):
+    wait_time = between(5, 15)
 
-
-class webUser(HttpUser):
-    wait_time = between(1, 3)
-
-    @task
-    def load_page(self):
+    @task(4)
+    def index(self):
         self.client.get("/")
 
-    @task
+    @task(1)
     def load_predict(self):
-        self.client.post("/predict", json={
+        self.client.get("/predict", json={
     "CHAS":{
       "0":0
    },
@@ -33,12 +31,3 @@ class webUser(HttpUser):
    }        
 })    
 
-class MyTaskSet(TaskSet):
-    @task
-    def my_task(self):
-        self.client.get("/")
-
-class MyLocust(Locust):
-    task_set = MyTaskSet
-    min_wait = 5000
-    max_wait = 15000
