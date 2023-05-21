@@ -37,6 +37,8 @@ stages:
       displayName: 'myStep 1'
 
     - script: |
+        python -m venv antenv
+        source antenv/bin/activate
         export PATH=$HOME/.local/bin:$PATH
         make install
       workingDirectory: $(projectRoot)
@@ -65,7 +67,7 @@ stages:
     - stage: Deploy
       displayName: Deploy Web App
       dependsOn: Build
-      condition: Suceeded
+      condition: suceeded()
       jobs:
       - deployment: DeploymentJob
         pool: MyAgentpool
