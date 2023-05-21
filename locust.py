@@ -4,11 +4,11 @@ from locust import HttpUser, task, between, TaskSet
 class MyUser(HttpUser):
     wait_time = between(5, 15)
 
-    @task(4)
+    @task
     def index(self):
         self.client.get("/")
 
-    @task(1)
+    @task
     def load_predict(self):
         self.client.get("/predict", json={
     "CHAS":{
