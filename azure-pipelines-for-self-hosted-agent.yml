@@ -62,7 +62,7 @@ stages:
       artifact: drop
 
  - stage: Deploy
-   displayName: 'Deploy Web App'
+   displayName: Deploy Web App
    dependsOn: Build
    condition: suceeded()
    jobs:
