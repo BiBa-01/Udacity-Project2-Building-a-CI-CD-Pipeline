@@ -4,7 +4,8 @@
 # https://aka.ms/yaml
 trigger:
 - main
-
+- buil
+- build_deploy1
 
 # TODO: Replace the agent pool name
 pool: MyAgentPool
