@@ -63,8 +63,8 @@ stages:
   dependsOn: Build
 - task: AzureWebApp@1
   inputs:
-    azureSubscription: 'myserviceconnection'
-    appType: 'webAppLinux'
-    appName: 'MyWebAPPBB'
-    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+     azureSubscription: 'myserviceconnection'
+     appType: 'webAppLinux'
+     appName: 'MyWebAPPBB'
+     package: '$(System.DefaultWorkingDirectory)/**/*.zip'
  
