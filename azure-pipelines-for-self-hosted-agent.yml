@@ -64,6 +64,7 @@ stages:
       displayName: 'myStep 5 - Upload package'
       artifact: drop
     
+<<<<<<< HEAD
     - stage: Deploy
       displayName: Deploy Web App
       dependsOn: Build
@@ -83,4 +84,25 @@ stages:
                       appName: $(WebAppName)
                       package: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
                       appType: webapp
+=======
+- stage: Deploy
+  displayName: Deploy Web App
+  dependsOn: Build
+  condition: Suceeded
+  jobs:
+  - deployment: DeploymentJob
+    pool: MyAgentpool
+    environment: $(environment name)
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - task: AzureWebApp@1
+            displayName: Deploy Azure Web App
+            inputs:
+              azureSubscription: $(AzureServiceConnectionID)
+              appName: $(WebAppName)
+              package: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+              appType: webapp
+>>>>>>> 8a95a4a010f552c10445188522ec5d0088eb15c9
 
