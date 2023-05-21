@@ -4,11 +4,7 @@
 # https://aka.ms/yaml
 trigger:
 - main
-- build 
-- task: AzureWebApp@1
-  inputs:
-    appName: 
-    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+
 
 # TODO: Replace the agent pool name
 pool: MyAgentPool
@@ -70,20 +66,20 @@ stages:
     - stage: Deploy
       displayName: Deploy Web App
       dependsOn: Build
-      condition: Suceeded
+      condition: Suceeded()
       jobs:
       - deployment: DeploymentJob
         pool: MyAgentpool
         environment: $(environment name)
         strategy:
-                runOnce:
-                  deploy:
-                  steps:
+          runOnce:
+            deploy:
+              steps:
                   - task: AzureWebApp@1
                     displayName: Deploy Azure Web App
                     inputs:
                       azureSubscription: $(AzureServiceConnectionID)
-                      appName: $(WebAppName)
-                      package: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+                      appName: $(webAppName)
+                      package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip #(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
                       appType: webapp
 
