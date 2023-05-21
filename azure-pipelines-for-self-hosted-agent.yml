@@ -6,7 +6,7 @@ trigger:
 - main
 - build
 - build and deploy
-
+#three branches
 # TODO: Replace the agent pool name
 pool: myAgentPool
 
