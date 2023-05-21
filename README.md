@@ -23,5 +23,9 @@ A Python virtual environment gives the ability to isolate the Python development
 6. Script and Test file for Continous Integration:
           hello.py
           test_hello.py
-7. xxx
+7. Clone GitHub Repo to Azure Cloud Shell
+8. Run make all to install, lint and test code 
+9. Configure GitHub Actions. Git Hub Actions will test project upon change events in GitHub. This is necessary to perform Continuous Integration remotely. The push change to GitHuB triggers the GitHub Actions Container, which in turns runs a service of commands.
+          Creation of pythonapp.yml and check first successful run
+11. xxx
 
