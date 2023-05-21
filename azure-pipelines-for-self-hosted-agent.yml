@@ -79,6 +79,6 @@ stages:
                     inputs:
                       azureSubscription: $ (AzureServiceConnectionID)
                         appName: $ (WebAppName)
-                        package: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+                        package: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
                         appType: webapp
 
