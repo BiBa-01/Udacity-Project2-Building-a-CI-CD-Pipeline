@@ -61,7 +61,6 @@ stages:
       displayName: 'myStep 5 - Upload package'
       artifact: drop
     
-
     - stage: Deploy
       displayName: 'Deploy Web App'
       dependsOn: Build
