@@ -20,7 +20,7 @@ def scale(payload):
 
 @app.route("/")
 def home():
-    html = "<h3>Sklearn Prediction Home</h3>"
+    html = "<h3>Sklearn Prediction Home1</h3>"
     return html.format(format)
 
 # TO DO:  Log out the prediction value
@@ -52,7 +52,7 @@ def predict():
     { "prediction": [ 20.35373177134412 ] }
     """
     try:
-        clf = joblib.load("./Housing_price_model/boston_housing_predict.joblib")
+        clf = joblib.load("./Housing_price_model/boston_housing_predict.joblib") 
     except:
         LOG.info("JSON payload: %s json_payload")
         return "Model not loaded"
