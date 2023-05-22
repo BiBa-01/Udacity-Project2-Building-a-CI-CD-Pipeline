@@ -22,14 +22,14 @@ stages:
   displayName: Build stage
   jobs:
   - job: BuildJob
-    pool: MyAgentPool
+    pool: myAgentPool
     steps:    
     - script: |
         python3.7 -m pip install --upgrade pip
         python3.7 -m pip install setup
         python3.7 -m pip install -r requirements.txt
       workingDirectory: $(projectRoot)
-      displayName: 'myStep 1'
+      displayName: 'Pip install requirements'
 
     - script: |
         python -m venv antenv
@@ -37,14 +37,14 @@ stages:
         export PATH=$HOME/.local/bin:$PATH
         make install
       workingDirectory: $(projectRoot)
-      displayName: 'myStep 2'
+      displayName: 'Install requirements'
 
     - script: |
         export PATH=$HOME/.local/bin:$PATH
         make install
         make lint
       workingDirectory: $(projectRoot)
-      displayName:  'myStep 3 - Run lint tests'
+      displayName:  'Run lint tests'
 
     - task: ArchiveFiles@2
       displayName: 'myStep 4 - Archive files'
@@ -60,13 +60,13 @@ stages:
       artifact: drop
 
 - stage: Deploy
-  displayName: Deploy Web App
+  displayName: 'Deploy Web App'
   dependsOn: Build
   #condition: suceeded()
   jobs:
   - deployment: DeploymentJob
-    pool: MyAgentpool
-    environment: $(environment name)
+    pool: myAgentPool
+    environment: $(environmentName)
     strategy:
       runOnce:
         deploy:
@@ -75,7 +75,7 @@ stages:
             displayName: 'Deploy Azure Web App : Udacity-Project2-Building-a-CI-CD-Pipeline'
             inputs:
               azureSubscription: $(azureServiceConnectionID)
-              appName: $(WebAppName)
+              appName: $(webAppName)
               package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
               appType: webapp
 
