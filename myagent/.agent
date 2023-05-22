@@ -1,0 +1,9 @@
+﻿{
+  "acceptTeeEula": true,
+  "agentId": 9,
+  "agentName": "cc-fcd21a69-c69f64dd9-zhdpb",
+  "poolId": 10,
+  "poolName": "MyAgentpool",
+  "serverUrl": "https://dev.azure.com/odluser234189/",
+  "workFolder": "_work"
+}
