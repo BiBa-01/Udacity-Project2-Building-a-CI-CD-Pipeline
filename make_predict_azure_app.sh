@@ -4,7 +4,6 @@ PORT=443
 echo "Port: $PORT"
 
 # POST method predict
-clf = joblib.load("./Housing_price_model/boston_housing_predict.joblib")
 curl -d '{
    "CHAS":{
       "0":0
