@@ -11,7 +11,7 @@ variables:
   # Name of Web App name
   webAppName: 'MyWebAPPBB'
   # Environment name
-  environmentName: 'Udacity-Project2-Building-a-CI-CD-Pipeline'
+  environmentName: 'Udacity-project2-Building-a-CI-CD-Pipeline'
 
   # Project root folder. Point to the folder containing manage.py file.
   projectRoot: $(System.DefaultWorkingDirectory) 
