@@ -1,6 +1,6 @@
 # Overview
 
-<TODO: complete this with an overview of your project>
+This is my 2nd project for Udacity CloudDevOps Engineer: Deploy Flask Machine Learning Application on Azure App Services
 
 ## Project Plan
 <TODO: Project Plan
