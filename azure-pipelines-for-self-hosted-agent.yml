@@ -9,7 +9,7 @@ variables:
   # Name of service connection 
   azureServiceConnectionId: 'myserviceconnection'
   # Name of Web App name
-  webAppName: 'MyWebAPPBB2'
+  webAppName: 'mywebappbb2'
 
   #Agent VM image name
   vmImageName: 'MYVM'
