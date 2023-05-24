@@ -10,3 +10,7 @@ class WebsiteTestUser(HttpUser):
     @task(2)
     def test2(self):
         self.client.post("http://localhost:5000/predict")
+
+ class WebsiteUser(HttpLocust):
+    task_set = UserBehavior
+       
