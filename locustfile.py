@@ -1,32 +1,28 @@
+import json
+import time
+import random
 from locust import HttpUser, task, between
 
-class WebsiteTestUser(HttpUser):
-    wait_time = between(0.5, 3.0)
+class MyUser(HttpUser):
+    wait_time = between(3, 5)
+
+    host = "https://mywebappbb1.azurewebsites.net.azurewebsites.net:443"
 
     @task(1)
-    def test_root(self):
-        self.client.get("")
+    def hello_world(self):
+        self.client.get("https://mywebappbb1.azurewebsites.net.azurewebsites.net")
+  
+    @task(5)
+    def predict(self):
 
-    @task(2)
-    def test_predict(self):
-        self.client.post("predict", json={
-                                "CHAS":{
-                                    "0":0
-                                },
-                                "RM":{
-                                    "0":6.575
-                                },
-                                "TAX":{
-                                    "0":296.0
-                                },
-                                "PTRATIO":{
-                                    "0":15.3
-                                },
-                                "B":{
-                                    "0":396.9
-                                },
-                                "LSTAT":{
-                                    "0":4.98
-                                }
-                            }
-                        )
+        
+        payload={ 
+            "CHAS": {"0": random.randint(0,1)}, 
+            "RM": {"0": random.uniform(1.5, 10.0)},
+            "TAX": {"0": random.uniform(99.0, 999.0)}, 
+            "PTRATIO": {"0": random.uniform(5.0, 45.0)}, 
+            "B": {"0": random.uniform(10.0, 999.0)}, 
+            "LSTAT": {"0": random.uniform(1.5, 9.9)} 
+        }
+        response = self.client.post("/predict", json=payload, headers={'Content-Type': 'application/json'})
+        time.sleep(1)
