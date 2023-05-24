@@ -1,17 +1,18 @@
 # Overview
 
-This is my 2nd project for Udacity CloudDevOps Engineer: Deploy Flask Machine Learning Application on Azure App Services
+This is my 2nd project for Udacity CloudDevOps Engineer Nanodegree. It is about deploying a Flask Machine Learning Application on Azure App Services. The application predicts house prices in Boston. 
 
 ## Project Plan
 <TODO: Project Plan
 
-* A link to a Trello board for the project
+* A link to a [Trello](https://trello.com/invite/b/rdzy0Xtw/ATTIae0e869fbd6efc8db62c1ccb6d80fb22543769CF/project-2-building-a-ci-cd-pipeline) board for the project 
 * A link to a spreadsheet that includes the original and final project plan>
 
 ## Instructions
 
 <TODO:  
-* Architectural Diagram (Shows how key parts of the system work)>
+* Architectural Diagram <img width="542" alt="image" src="https://github.com/BiBa-01/Udacity-Project2-Building-a-CI-CD-Pipeline/assets/78079178/aaa5dc2e-f3d9-4d36-927f-31ef89b317d7">
+
 
 <TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
 
