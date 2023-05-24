@@ -3,7 +3,7 @@
 This is my 2nd project for Udacity CloudDevOps Engineer Nanodegree. It is about deploying a Flask Machine Learning Application on Azure App Services. The application predicts house prices in Boston. 
 
 ## Project Plan
-<TODO: Project Plan
+
 
 * A link to a [Trello](https://trello.com/invite/b/rdzy0Xtw/ATTIae0e869fbd6efc8db62c1ccb6d80fb22543769CF/project-2-building-a-ci-cd-pipeline) board for the project 
 * A link to a spreadsheet that includes the original and final project plan>
@@ -16,44 +16,78 @@ This is my 2nd project for Udacity CloudDevOps Engineer Nanodegree. It is about 
 
 Instructions for running the Python project:
 * Clone this Report to your Azure Cloud shell: git clone git@github.com:BiBa-01/Udacity-Project2-Building-a-CI-CD-Pipeline.git
+<img width="761" alt="image" src="https://github.com/BiBa-01/Udacity-Project2-Building-a-CI-CD-Pipeline/assets/78079178/c7a0e3d3-dee9-4f13-ab47-d263c33b922c">
 
-* Create a virtual environment
+* Create a virtual environment and source
 ```python
-python3 -m venv ~/.myrepo
-```
-* Activate the virtual environment:
-```
+python3 -m venv ~/.flask-ml-azure
 
-source ~/.myrepo/bin/activate
-* ```
+source ~/.flask-ml-azure/bin/activate
+```
+* Run
+```
+make install
+```
+<img width="612" alt="image" src="https://github.com/BiBa-01/Udacity-Project2-Building-a-CI-CD-Pipeline/assets/78079178/45c58e45-1652-49aa-bbd5-0377e5f9773d">
+
+* Passing test after running the 'make all' command from the 'Makefile'
+<img width="548" alt="image" src="https://github.com/BiBa-01/Udacity-Project2-Building-a-CI-CD-Pipeline/assets/78079178/636ae775-5d67-4cba-99b3-7d6db05b40ad">
+
+* Successful build in GitHub
+
+<img width="537" alt="image" src="https://github.com/BiBa-01/Udacity-Project2-Building-a-CI-CD-Pipeline/assets/78079178/41087b24-c652-4bf0-8f9d-b3884a1d4e7a">
+
+
 * Project running on Azure App Service
-
-* Project cloned into Azure Cloud Shell
-
-* Passing tests that are displayed after running the `make all` command from the `Makefile`
-
-* Output of a test run
-
-* Successful deploy of the project in Azure Pipelines.  [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
-
-* Running Azure App Service from Azure Pipelines automatic deployment
-
-* Successful prediction from deployed flask app in Azure Cloud Shell.  [Use this file as a template for the deployed prediction](https://github.com/udacity/nd082-Azure-Cloud-DevOps-Starter-Code/blob/master/C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn/make_predict_azure_app.sh).
-The output should look similar to this:
-
-```bash
-udacity@Azure:~$ ./make_predict_azure_app.sh
-Port: 443
-{"prediction":[20.35373177134412]}
+* Create App Service in Azure:
 ```
+az webapp up -n <name>
+```
+<img width="480" alt="image" src="https://github.com/BiBa-01/Udacity-Project2-Building-a-CI-CD-Pipeline/assets/78079178/c9843f8b-20ab-4113-9ce1-09245c4d8be6">
+
+<img width="828" alt="image" src="https://github.com/BiBa-01/Udacity-Project2-Building-a-CI-CD-Pipeline/assets/78079178/582c61af-29fe-4182-8e16-28506e347b31">
+
+
+
+* Open Azure DevOps Organization
+* Open a new project
+* Create a service connections (settings)
+
+<img width="501" alt="image" src="https://github.com/BiBa-01/Udacity-Project2-Building-a-CI-CD-Pipeline/assets/78079178/71d80796-853e-4013-8f93-4a6c0d399def">
+
+* Set up a pipeline linked to your GitHub Repo (Pipeline with using existing YAML File: azure-pipelines-for-self-hosted-agent.yml )
+
+
+* Running Azure App Service from Azure Pipelines automatic deployment:
+<img width="516" alt="image" src="https://github.com/BiBa-01/Udacity-Project2-Building-a-CI-CD-Pipeline/assets/78079178/65467fc2-f4cc-406a-ab8b-94cd6221ce4f">
+
+
+
+* Prediction from deployed flask app in Azure Cloud Shell:
+For running the app script please change at the end of the make_predict_azure_app.sh file the "-X POST https://mywebappbb2.azurewebsites.net:$PORT/predict" to your own web app name.
+Then run the script:
+```
+./make_predict_azure_app.sh
+```
+
+If it runs successfully it should show the following result:
+
+![image](https://github.com/BiBa-01/Udacity-Project2-Building-a-CI-CD-Pipeline/assets/78079178/3fb2c2be-0c58-4ba2-b429-4a9f987243f6)
+
+By opening the folloing web address https://mywebappbb1.azurewebsites.net/ you should see the following:
+
+![image](https://github.com/BiBa-01/Udacity-Project2-Building-a-CI-CD-Pipeline/assets/78079178/863e0485-20b9-41b8-b6c6-4122ee7a7f29)
 
 * Output of streamed log files from deployed application
+
+![image](https://github.com/BiBa-01/Udacity-Project2-Building-a-CI-CD-Pipeline/assets/78079178/212ed9a5-6241-430a-bf82-9e0be7c575c4)
 
 > 
 
 ## Enhancements
 
-<TODO: A short description of how to improve the project in the future>
+The project could be improved by using different ML algorithm and compare them. 
+
 
 ## Demo 
 
