@@ -10,12 +10,22 @@ This is my 2nd project for Udacity CloudDevOps Engineer Nanodegree. It is about 
 
 ## Instructions
 
-<TODO:  
-* Architectural Diagram <img width="542" alt="image" src="https://github.com/BiBa-01/Udacity-Project2-Building-a-CI-CD-Pipeline/assets/78079178/aaa5dc2e-f3d9-4d36-927f-31ef89b317d7">
+* Architectural Diagram 
+* <img width="542" alt="image" src="https://github.com/BiBa-01/Udacity-Project2-Building-a-CI-CD-Pipeline/assets/78079178/aaa5dc2e-f3d9-4d36-927f-31ef89b317d7">
 
 
-<TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
+Instructions for running the Python project:
+* Clone this Report to your Azure Cloud shell: git clone git@github.com:BiBa-01/Udacity-Project2-Building-a-CI-CD-Pipeline.git
 
+* Create a virtual environment
+```python
+python3 -m venv ~/.myrepo
+```
+* Activate the virtual environment:
+```
+
+source ~/.myrepo/bin/activate
+* ```
 * Project running on Azure App Service
 
 * Project cloned into Azure Cloud Shell
