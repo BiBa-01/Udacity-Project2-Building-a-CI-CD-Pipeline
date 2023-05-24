@@ -6,7 +6,7 @@ This is my 2nd project for Udacity CloudDevOps Engineer Nanodegree. It is about 
 
 
 * A link to a [Trello](https://trello.com/invite/b/rdzy0Xtw/ATTIae0e869fbd6efc8db62c1ccb6d80fb22543769CF/project-2-building-a-ci-cd-pipeline) board for the project 
-* A link to a spreadsheet that includes the original and final project plan>
+
 
 ## Instructions
 
@@ -98,6 +98,6 @@ For future enhancements it could be considered to use different GitHub branches 
 
 ## Demo 
 
-<TODO: Add link Screencast on YouTube>
+[Link to Video<link Screencast on YouTube>](https://youtu.be/ZIe0ztoLUPk)
 
 
