@@ -1,20 +1,32 @@
-from locust import HttpUser, task, between
+rom locust import HttpUser, task, between, TaskSet
 
-class WebsiteTestUser(HttpUser):
-    wait_time = between(0.5, 3.0)
+class MyUser(HttpUser):
+    wait_time = between(5, 15)
 
-    @task(1)
-    def test1(self):
-        self.client.get("http://localhost:5000")
+    @task
+    def index(self):
+        self.client.get("/")
 
-    @task(2)
-    def test2(self):
-        self.client.post("http://localhost:5000/predict")
-     
-if __name__=="__main__":
-    app.run(host=os.getenv('IP', '0.0.0.0'), 
-            port=int(os.getenv('PORT', 4444)))
+    @task
+    def load_predict(self):
+        self.client.post("predict", json={
+    "CHAS":{
+      "0":0
+   },
+   "RM":{
+      "0":6.575
+   },
+   "TAX":{
+      "0":296.0
+   },
+   "PTRATIO":{
+      "0":15.3
+   },
+   "B":{
+      "0":396.9
+   },
+   "LSTAT":{
+      "0":4.98
+   }        
+})    
 
-#class WebsiteUser(HttpLocust):
- #  task_set = UserBehavior
-       
