@@ -78,16 +78,23 @@ By opening the folloing web address https://mywebappbb1.azurewebsites.net/ you s
 
 ![image](https://github.com/BiBa-01/Udacity-Project2-Building-a-CI-CD-Pipeline/assets/78079178/863e0485-20b9-41b8-b6c6-4122ee7a7f29)
 
-* Output of streamed log files from deployed application
+* Output of streamed log files from deployed application:
+https://<app-name>.scm.azurewebsites.net/api/logs/docker
 
 ![image](https://github.com/BiBa-01/Udacity-Project2-Building-a-CI-CD-Pipeline/assets/78079178/212ed9a5-6241-430a-bf82-9e0be7c575c4)
 
+* Performing a loadtest with Locust:
+ ```
+  locust -f locustfile.py --headless -u 10 -r 5 -t 5s --web-port 8079
+  ```
+  ![image](https://github.com/BiBa-01/Udacity-Project2-Building-a-CI-CD-Pipeline/assets/78079178/600ee3a7-e483-46da-902b-4abea164778a)
+
+ 
 > 
 
 ## Enhancements
 
-The project could be improved by using different ML algorithm and compare them. 
-
+For future enhancements it could be considered to use different GitHub branches for staging and production and to look for further automation possibilities.
 
 ## Demo 
 
