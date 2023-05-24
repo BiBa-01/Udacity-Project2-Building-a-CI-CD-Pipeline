@@ -10,6 +10,10 @@ class WebsiteTestUser(HttpUser):
     @task(2)
     def test2(self):
         self.client.post("http://localhost:5000/predict")
+     
+if __name__=="__main__":
+    app.run(host=os.getenv('IP', '0.0.0.0'), 
+            port=int(os.getenv('PORT', 4444)))
 
 #class WebsiteUser(HttpLocust):
  #  task_set = UserBehavior
