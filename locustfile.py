@@ -1,4 +1,4 @@
-rom locust import HttpUser, task, between, TaskSet
+from locust import HttpUser, task, between, TaskSet
 
 class MyUser(HttpUser):
     wait_time = between(5, 15)
