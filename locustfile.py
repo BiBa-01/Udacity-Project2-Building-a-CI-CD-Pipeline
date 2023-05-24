@@ -6,11 +6,11 @@ from locust import HttpUser, task, between
 class MyUser(HttpUser):
     wait_time = between(3, 5)
 
-    host = "https://mywebappbb1.azurewebsites.net.azurewebsites.net:443"
+    host = "https://mywebappbb1.azurewebsites.net:443"
 
     @task(1)
     def hello_world(self):
-        self.client.get("https://mywebappbb1.azurewebsites.net.azurewebsites.net")
+        self.client.get("https://mywebappbb1.azurewebsites.net")
   
     @task(5)
     def predict(self):
