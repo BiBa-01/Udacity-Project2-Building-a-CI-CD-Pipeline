@@ -1,3 +1,4 @@
+https://github.com/BiBa-01/Udacity-Project2-Building-a-CI-CD-Pipeline/actions/workflows/<WORKFLOW_FILE>/badge.svg
 # Overview
 
 This is my 2nd project for Udacity CloudDevOps Engineer Nanodegree. It is about deploying a Flask Machine Learning Application on Azure App Services. The application predicts house prices in Boston. 
@@ -6,7 +7,7 @@ This is my 2nd project for Udacity CloudDevOps Engineer Nanodegree. It is about 
 
 
 * A link to a [Trello](https://trello.com/invite/b/rdzy0Xtw/ATTIae0e869fbd6efc8db62c1ccb6d80fb22543769CF/project-2-building-a-ci-cd-pipeline) board for the project 
-* A link to a Project plan
+* A link to a [Project plan](https://github.com/BiBa-01/Udacity-Project2-Building-a-CI-CD-Pipeline/issues/6#issue-1725160101)
 
 
 ## Instructions
