@@ -5,7 +5,7 @@ This is my 2nd project for Udacity CloudDevOps Engineer Nanodegree. It is about 
 ## Project Plan
 
 
-* A link to a [Trello](https://trello.com/invite/b/rdzy0Xtw/ATTIae0e869fbd6efc8db62c1ccb6d80fb22543769CF/project-2-building-a-ci-cd-pipeline) board for the project 
+* A link to a [Trello]([https://trello.com/invite/b/rdzy0Xtw/ATTIae0e869fbd6efc8db62c1ccb6d80fb22543769CF/project-2-building-a-ci-cd-pipeline]) board for the project 
 
 
 ## Instructions
