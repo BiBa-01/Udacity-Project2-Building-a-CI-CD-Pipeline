@@ -1,4 +1,4 @@
-https://github.com/BiBa-01/Udacity-Project2-Building-a-CI-CD-Pipeline/actions/workflows/<WORKFLOW_FILE>/badge.svg
+[![Python application](https://github.com/BiBa-01/Udacity-Project2-Building-a-CI-CD-Pipeline/actions/workflows/pythonapp.yml/badge.svg?event=push)
 # Overview
 
 This is my 2nd project for Udacity CloudDevOps Engineer Nanodegree. It is about deploying a Flask Machine Learning Application on Azure App Services. The application predicts house prices in Boston. 
